@@ -1,6 +1,7 @@
 package dev.posadskiy.skillrepeat;
 
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -13,7 +14,9 @@ public class MongoConfiguration {
 
     @Bean
     public MongoClient mongoClient() {
-        return new MongoClient();
+        MongoClientURI uri = new MongoClientURI(
+            "mongodb+srv://nimda:25531094@cluster0-bvzgv.mongodb.net/skill_repeat?retryWrites=true&w=majority");
+        return new MongoClient(uri);
     }
 
     @Bean

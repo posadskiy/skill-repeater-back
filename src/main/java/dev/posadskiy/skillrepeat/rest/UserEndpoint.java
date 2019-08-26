@@ -125,7 +125,7 @@ public class UserEndpoint {
 		DbSession session = sessionRepository.save(new DbSession(request.getSession().getId(), user.getId(), System.currentTimeMillis() + SESSION_LIFE_TIME_MS));
 		Cookie cookie = new Cookie(SESSION_COOKIE_NAME, session.getId());
 		cookie.setPath("/");
-		cookie.setDomain("localhost");
+		cookie.setDomain("posadskiy.space");
 		cookie.setMaxAge(SESSION_LIFE_TIME_S);
 		response.addCookie(cookie);
 		return user;
@@ -149,7 +149,7 @@ public class UserEndpoint {
 		DbSession session = sessionRepository.save(new DbSession(request.getSession().getId(), user.getId(), System.currentTimeMillis() + SESSION_LIFE_TIME_MS));
 		Cookie cookie = new Cookie(SESSION_COOKIE_NAME, session.getId());
 		cookie.setPath("/");
-		cookie.setDomain("localhost");
+		cookie.setDomain("posadskiy.space");
 		cookie.setMaxAge(SESSION_LIFE_TIME_S);
 		response.addCookie(cookie);
 		return user;
@@ -173,7 +173,7 @@ public class UserEndpoint {
 		DbSession session = sessionRepository.save(new DbSession(request.getSession().getId(), createdUser.getId(), System.currentTimeMillis() + SESSION_LIFE_TIME_MS));
 		Cookie cookie = new Cookie(SESSION_COOKIE_NAME, session.getId());
 		cookie.setPath("/");
-		cookie.setDomain("localhost");
+		cookie.setDomain("posadskiy.space");
 		cookie.setMaxAge(SESSION_LIFE_TIME_S);
 		response.addCookie(cookie);
 		return createdUser;

@@ -30,7 +30,7 @@ public class EmailNotificationWorker {
 	@Autowired
 	private MailService mailService;
 
-	@Scheduled(initialDelay = 6000000, fixedDelay = 900000)
+	@Scheduled(fixedDelay = 900000)
 	public void sendEmailNotification() {
 		log.info("Email notification worker started");
 		List<DbUser> users = userRepository.findAll();
